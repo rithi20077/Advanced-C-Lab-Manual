@@ -16,16 +16,35 @@ Else
  
 Program:
 
-//type your code here
+    #include<stdio.h>
+    struct eligible
+    {int Age;
+      char name[100];
+    };
+    int main()
+    {
+       struct eligible eli;
+       scanf("%d",&eli.Age);
+       printf("Age:%d\n",eli.Age);
+       scanf("%s",eli.name);
+       printf("Name:%svaccine:%d\n",eli.name,eli.Age);
+       if(eli.Age>18)
+       printf("eligibility:yes");
+       else
+       printf("eligibility:no");
+       return 0;
+    }
 
 
 Output:
 
-//paste your output here
+ ![image](https://github.com/user-attachments/assets/4b8d70cc-1e4c-4493-9e4f-26d8b2b66d3d)
+
 
 
 Result:
 Thus, the program is verified successfully. 
+
 
 
 
@@ -44,21 +63,51 @@ Algorithm:
  
 Program:
 
-//type your code here
+    #include <stdio.h>
+    struct Point {
+    int x;
+    int y;
+    };
 
+
+    void displayPoint(struct Point p) {
+        printf("Point: (%d, %d)\n", p.x, p.y);
+    }
+
+
+    struct Point addPoints(struct Point p1, struct Point p2) {
+         struct Point result;
+         result.x = p1.x + p2.x;
+         result.y = p1.y + p2.y;
+         return result;
+    }
+
+    int main() {
+        struct Point a = {3, 4};
+        struct Point b = {5, 7};
+
+       printf("Point A: ");
+       displayPoint(a);
+
+       printf("Point B: ");
+       displayPoint(b);
+
+      struct Point sum = addPoints(a, b);
+      printf("Sum of A and B: ");
+      displayPoint(sum);
+
+    return 0;
+    }
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
+![image](https://github.com/user-attachments/assets/8f14597f-9c9f-45c8-8332-2409a2abb991)
 
 Result:
 Thus, the program is verified successfully
+
 
 
  
@@ -86,32 +135,35 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
-
-
+     #include <stdio.h>
+     int main()
+    {
+       FILE*file=fopen("Hospital.txt","w");
+       if(file == NULL)
+      {
+        printf("Error creating file\n");
+        return 1;
+      }
+        printf("File Created Successfully\n");
+        printf("File Opened\n");
+        fclose(file);
+        printf("File Closed\n");
+        return 0;
+    }
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
+ ![image](https://github.com/user-attachments/assets/344e63fe-dd19-4f96-b894-5f4141f85a3e)
 
 Result:
 Thus, the program is verified successfully
  
 
 
+
 EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
+
 Aim:
 To write a C program to read, a file and insert text in that file
 Algorithm:
@@ -133,23 +185,39 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
-
-
-
+    #include <stdio.h>
+    int main()
+    {
+       char filename[50];
+       int n;
+       scanf("%s",filename);
+       FILE*file = fopen(filename,"w");
+       if(file == NULL)
+       {
+          printf("Error creating file!\n");
+          return 1;
+       }    
+       printf("%s Opened\n",filename);
+       scanf("%d",&n);
+      float value;
+      for(int i=0;i<n;i++)
+      {
+        scanf("%f",&value);
+        fprintf(file,"%.2f\n",value);
+      }
+        printf("Data added Successfully\n");
+        fclose(file);
+        return 0;
+    }
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+ ![image](https://github.com/user-attachments/assets/05eb8df5-3147-4234-b99a-4cf721bdfb5a)
 
 Result:
 Thus, the program is verified successfully
+
+
 
 
 
@@ -187,19 +255,41 @@ Algorithm:
 
 Program:
 
-//type your code here
+    #include <stdio.h>
+    #include <stdlib.h>
 
+    struct Subject {
+       char name[50];
+       float marks;
+    };
+
+    int main() {
+    int n;
+    printf("Number of subjects: ");
+    scanf("%d", &n);
+
+    struct Subject *subj = malloc(n * sizeof(struct Subject));
+
+    for (int i = 0; i < n; i++) {
+        printf("Subject %d name: ", i + 1);
+        scanf(" %[^\n]", subj[i].name);
+        printf("Marks: ");
+        scanf("%f", &subj[i].marks);
+    }
+
+    printf("\n--- Subject Details ---\n");
+    for (int i = 0; i < n; i++)
+        printf("%s: %.2f\n", subj[i].name, subj[i].marks);
+
+    free(subj);
+    return 0;
+    }
 
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
+![WhatsApp Image 2025-04-25 at 14 02 24_7ee5ef49](https://github.com/user-attachments/assets/1d14e719-6377-44e8-bc18-5f4b4a694939)
 
 
 Result:
