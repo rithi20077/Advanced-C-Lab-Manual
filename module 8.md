@@ -16,23 +16,90 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+
+{
+
+    struct Node *prev;
+
+    struct Node *next;
+
+    float data;
+
+}*head;
 
 
 
+void search(float data)
+
+{
+
+    
+
+    struct Node *temp;
+
+    temp=head;
+
+    float item=data;
+
+    int i=0,flag;
+
+    if(temp==NULL)
+
+    {
+
+        printf("List is empty");
+
+    }
+
+    else
+
+    {
+
+        while(temp!=0)
+
+        {
+
+            if(temp->data==item)
+
+            {
+
+                printf("item %.2f found at location %d",item,i+1);
+
+                flag=0;
+
+            }i++;
+
+            temp=temp->next;
+
+        }
+
+    }
+
+    if(flag!=0)
+
+    {
+
+        printf("Item not found");
+
+    }   
+
+}
+
+
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
+![WhatsApp Image 2025-04-26 at 20 39 36_9568a938](https://github.com/user-attachments/assets/1f7cbdc5-c849-4b82-ad6a-5eda9d52ce44)
 
 
 Result:
 Thus, the program is verified successfully
+
+
  
 EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
 Aim:
@@ -47,23 +114,47 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    int data; 
+    struct Node *next;
+}*head;
 
 
+void insert(int data)
+{
+  struct Node *ptr;
+  ptr=(struct Node*)malloc(sizeof(struct Node));
+  struct Node *temp;
+  if(head==NULL){
+      head=ptr;
+      head->data=data;
+      ptr->next=NULL;
+      return;
+  } 
+  temp=head;
+  while(temp->next!=NULL){
+      temp=temp->next;
+  }
+  ptr->data=data;
+  ptr->next=NULL;
+  temp->next=ptr;
+}
+
+```
 
 
 Output:
 
 
-//paste your output here
-
-
-
-
+ ![WhatsApp Image 2025-04-26 at 20 39 57_35ab0d93](https://github.com/user-attachments/assets/1d775627-eca9-4203-aa25-e5aff2d756c8)
 
 
 Result:
 Thus, the program is verified successfully
+
+
+
 
 EXP NO:8 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER.
 Aim:
@@ -84,23 +175,37 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
 
+void display()
+{
+    while(head!=NULL)
+    {
+        printf("%d\n",head->data);
+        head=head->next;
+    } 
+}
 
-
+```
 
 Output:
 
 
-//paste your output here
-
-
-
+![WhatsApp Image 2025-04-26 at 20 40 20_b9078266](https://github.com/user-attachments/assets/ee02ec65-6c8f-4dc0-9f82-5c41e8980868)
 
 
 
 Result:
 Thus, the program is verified successfully
+
+
+
  
 EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
 SHOWN BELOW.
@@ -117,23 +222,48 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
 
-
-
+void insert(char data)
+{
+    struct Node *n=(struct Node *)malloc(sizeof(struct Node *));
+    struct Node *temp;
+    if(head==NULL)
+    {
+        head=n;
+        head->data=data;
+        n->next=NULL;
+        return;
+    }
+    temp=head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    n->data=data;
+    n->next=NULL;
+    temp->next=n;
+    
+    
+}
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
+![WhatsApp Image 2025-04-26 at 20 40 41_81d36325](https://github.com/user-attachments/assets/fa3a5ac7-f002-46d8-afd0-f45b2f2b8a73)
 
 
 Result:
 Thus, the program is verified successfully
+
+
 
 EXP NO:10 C PROGRAM TO FIND A SQUARE  OF NUMBER USING FUNCTION WITHOUT ARGUMENTS WITH RETURN TYPE
 
@@ -156,19 +286,29 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
-
-
-
-
+```
+struct Node
+{
+    char data; 
+    struct Node *next;
+}*head;
+void delete()
+{
+    if(head != NULL)
+    {
+        head = head->next;
+        printf("Node deleted from the begining ...\n");
+    }
+    else
+    {
+       printf("List is empty");
+    }
+}
+```
 Output:
 
 
-//paste your output here
-
-
-
-
+![WhatsApp Image 2025-04-26 at 20 41 01_87deaaef](https://github.com/user-attachments/assets/38fcbef2-a156-49cb-bf3a-84867ab5060e)
 
 
 Result:
